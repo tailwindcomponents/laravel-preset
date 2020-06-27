@@ -1,0 +1,22 @@
+{
+  "name": "tailwindcomponents/laravel-preset",
+  "description": "Laravel frontend preset for Tailwind CSS",
+  "keywords": ["laravel", "preset", "tailwindcss"],
+  "license": "MIT",
+  "require": {
+    "laravel/framework": "^7.0",
+    "laravel/ui": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TailwindComponents\\LaravelPreset\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "TailwindComponents\\LaravelPreset\\LaravelPresetServiceProvider"
+      ]
+    }
+  }
+}
