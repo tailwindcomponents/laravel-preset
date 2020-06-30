@@ -29,6 +29,8 @@ class LaravelPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
+            'vue' => '^2.6.11',
+            'vue-template-compiler' => '^2.6.11',
             'laravel-mix' => '^5.0.1',
             'tailwindcss' => '^1.4',
             '@tailwindcss/custom-forms' => '^0.2',

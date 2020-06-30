@@ -11,6 +11,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -20,12 +24,24 @@
         <nav class="bg-white shadow-sm">
             <div class="container flex justify-between items-center mx-auto px-6 py-4">
                 <div>
-                    <a href="/" class="text-xl text-gray-800">Laravle</a>
+                    <a href="{{ url('/') }}" class="text-xl text-gray-800">{{ config('app.name', 'Laravel') }}</a>
                 </div>
 
                 <div>
-                    <a href="/login" class="text-gray-700 font-light mx-4 hover:underline">Login</a>
-                    <a href="/register" class="text-gray-700 font-light hover:underline">Register</a>
+                    @guest
+                        <a href="{{ route('login') }}" class="text-gray-700 font-light mx-4 hover:underline">{{ __('Login') }}</a>
+                        <a href="{{ route('register') }}" class="text-gray-700 font-light hover:underline">{{ __('Register') }}</a>
+                    @else
+                        <a href="{{ route('logout') }}" class="text-gray-700 font-light mx-4 hover:underline" 
+                            onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                             {{ Auth::user()->name }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @endguest
                 </div>
             </div>
         </nav>
