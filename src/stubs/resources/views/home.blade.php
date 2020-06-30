@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex items-center justify-center mt-16 mx-6">
-    <div class="p-6 bg-white shadow rounded-md">
+    <div class="p-6 bg-white shadow rounded-md max-w-xl w-full">
         <h3 class="text-gray-700 text-lg">{{ __('Dashboard') }}</h3>
 
 

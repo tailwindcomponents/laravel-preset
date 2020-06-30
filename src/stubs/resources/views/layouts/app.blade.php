@@ -32,11 +32,21 @@
                         <a href="{{ route('login') }}" class="text-gray-700 font-light mx-4 hover:underline">{{ __('Login') }}</a>
                         <a href="{{ route('register') }}" class="text-gray-700 font-light hover:underline">{{ __('Register') }}</a>
                     @else
-                        <a href="{{ route('logout') }}" class="text-gray-700 font-light mx-4 hover:underline" 
-                            onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                             {{ Auth::user()->name }}
-                        </a>
+                        <div  class="relative">
+                            <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block text-gray-700 font-light focus:outline-none">
+                                {{ Auth::user()->name }}
+                            </button>
+
+                            <div v-if="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
+
+                            <div v-if="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+                                <a href="{{ route('logout') }}"  class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white" 
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                            </div>
+                        </div>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
