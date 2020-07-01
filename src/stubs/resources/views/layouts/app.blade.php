@@ -40,7 +40,7 @@
                             <div v-if="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
 
                             <div v-if="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
-                                <a href="{{ route('logout') }}"  class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white" 
+                                <a href="{{ route('logout') }}"  class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white" 
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
