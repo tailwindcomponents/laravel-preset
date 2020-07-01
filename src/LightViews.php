@@ -9,7 +9,7 @@ use Illuminate\Filesystem\Filesystem;
 use Laravel\Ui\Presets\Preset;
 use Symfony\Component\Finder\SplFileInfo;
 
-class LaravelPreset extends Preset
+class LightViews extends Preset
 {
     public static function install()
     {
@@ -75,7 +75,7 @@ class LaravelPreset extends Preset
     {
         (new Filesystem)->delete(resource_path('views/vendor/paginate'));
 
-        (new Filesystem)->copyDirectory(__DIR__.'/stubs/resources/views/vendor/pagination', resource_path('views/vendor/pagination'));
+        (new Filesystem)->copyDirectory(__DIR__.'/stubs/resources/light/views/vendor/pagination', resource_path('views/vendor/pagination'));
     }
 
     protected static function scaffoldController()
@@ -106,7 +106,7 @@ class LaravelPreset extends Preset
         );
 
         tap(new Filesystem, function ($filesystem) {
-            $filesystem->copyDirectory(__DIR__.'/stubs/resources/views', resource_path('views'));
+            $filesystem->copyDirectory(__DIR__.'/stubs/resources/light/views', resource_path('views'));
 
             collect($filesystem->allFiles(base_path('vendor/laravel/ui/stubs/migrations')))
                 ->each(function (SplFileInfo $file) use ($filesystem) {

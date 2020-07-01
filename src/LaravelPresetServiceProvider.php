@@ -11,12 +11,12 @@ class LaravelPresetServiceProvider extends ServiceProvider
     public function boot()
     {
         UiCommand::macro('tailwindcss', function ($command) {
-            LaravelPreset::install();
+            LightViews::install();
 
             $command->info('Tailwind CSS scaffolding installed successfully.');
 
             if ($command->option('auth')) {
-                LaravelPreset::installAuth();
+                LightViews::installAuth();
 
                 $command->info('Tailwind CSS auth scaffolding installed successfully.');
             }
