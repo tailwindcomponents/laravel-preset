@@ -1,6 +1,6 @@
 @if ($paginator->hasPages())
-    <nav dir="ltr">
-        <div class="flex font-roboto rounded">
+    <nav>
+        <div class="flex rounded">
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
                 <a class="py-2 px-4 leading-tight bg-white border border-gray-200 text-blue-700 border-r-0 ml-0 rounded-l" aria-disabled="true" aria-label="@lang('pagination.previous')">
