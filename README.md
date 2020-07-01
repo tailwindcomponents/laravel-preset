@@ -8,13 +8,13 @@ This package requires Laravel 7.0 or higher.
 1. Fresh install Laravel and `cd` to your app.
 2. Install `composer require tailwindcomponents/laravel-preset --dev`.
 
-### a. For Presets without Authentication
+### a. Preset WITHOUT Authentication
 
 1. Use `php artisan ui tailwindcss` for the basic Tailwind CSS preset
 2. `npm install && npm run dev`
 3. `php artisan serve` (or equivalent) to run server and test preset.
 
-### b. For Presets with Authentication
+### b. Preset WITH Authentication
 
 1. Use `php artisan ui tailwindcss --auth` for the basic preset, auth route entry, and Tailwind CSS auth views in one go. (NOTE: If you run this command several times, be sure to clean up the duplicate Auth entries in `routes/web.php`)
 4. `npm install && npm run dev`
