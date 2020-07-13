@@ -44,6 +44,8 @@ The default `tailwind.config.js` configuration file included by this package sim
 
 ![Pagination](/screenshots/pagination.png)
 
+![Pagination](/screenshots/pagination-simple.png)
+
 ## Dark
 
 ![Dashboard](/screenshots/dashboard-dark.png)
@@ -59,3 +61,5 @@ The default `tailwind.config.js` configuration file included by this package sim
 ![Verify](/screenshots/verify-dark.png)
 
 ![Pagination](/screenshots/pagination-dark.png)
+
+![Pagination](/screenshots/pagination-simple-dark.png)
