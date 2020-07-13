@@ -39,5 +39,6 @@ class LaravelPresetServiceProvider extends ServiceProvider
         });
 
         Paginator::defaultView('pagination::default');
+        Paginator::defaultView('pagination::simple-default');
     }
 }
