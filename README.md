@@ -1,6 +1,14 @@
 # Laravel preset for TailwindCSS
 
-A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.com) - a Utility-First CSS Framework for Rapid UI Development.
+[![License](https://poser.pugx.org/tailwindcomponents/laravel-preset/license)](//packagist.org/packages/tailwindcomponents/laravel-preset)
+[![Latest Stable Version](https://poser.pugx.org/tailwindcomponents/laravel-preset/v)](//packagist.org/packages/tailwindcomponents/laravel-preset)
+[![Total Downloads](https://poser.pugx.org/tailwindcomponents/laravel-preset/downloads)](//packagist.org/packages/tailwindcomponents/laravel-preset)
+[![Monthly Downloads](https://poser.pugx.org/tailwindcomponents/laravel-preset/d/monthly)](//packagist.org/packages/tailwindcomponents/laravel-preset)
+<a href="https://twitter.com/TwComponents">
+    <img src="https://img.shields.io/twitter/url?label=Tailwindcomponents&style=social&url=https%3A%2F%2Ftwitter.com%2FTwComponents">
+</a>
+
+🛹 A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.com) - a Utility-First CSS Framework for Rapid UI Development.
 
 ## Installation and usage
 This package requires Laravel 7.0 or higher.
