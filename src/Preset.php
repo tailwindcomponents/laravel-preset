@@ -12,12 +12,14 @@ use Symfony\Component\Finder\SplFileInfo;
 class Preset extends LaravelPreset
 {
     const NPM_PACKAGES_TO_ADD = [
-        '@tailwindcss/typography' => '^0.2',
-        '@tailwindcss/custom-forms' => '^0.2',
+        '@tailwindcss/typography' => '^0.2.0',
+        '@tailwindcss/custom-forms' => '^0.2.0',
+        'laravel-mix' => '^5.0.1',
+        'tailwindcss' => '^1.7.0',
+        'autoprefixer' => '^9.8.6',
+        'postcss-import' => '^12.0.1',
         'vue' => '^2.6.11',
         'vue-template-compiler' => '^2.6.11',
-        'laravel-mix' => '^5.0.1',
-        'tailwindcss' => '^1.4',
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [
