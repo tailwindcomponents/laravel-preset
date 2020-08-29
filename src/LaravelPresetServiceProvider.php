@@ -5,18 +5,20 @@ namespace TailwindComponents\LaravelPreset;
 use Laravel\Ui\UiCommand;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
+use TailwindComponents\LaravelPreset\Presets\Dark;
+use TailwindComponents\LaravelPreset\Presets\Light;
 
 class LaravelPresetServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         UiCommand::macro('tailwindcss', function ($command) {
-            LaravelPresetLight::install();
+            Light::install();
 
             $command->info('Tailwind CSS scaffolding installed successfully.');
 
             if ($command->option('auth')) {
-                LaravelPresetLight::installAuth();
+                Light::installAuth();
 
                 $command->info('Tailwind CSS auth scaffolding installed successfully.');
             }
@@ -25,12 +27,12 @@ class LaravelPresetServiceProvider extends ServiceProvider
         });
 
         UiCommand::macro('tailwindcss:dark', function ($command) {
-            LaravelPresetDark::install();
+            Dark::install();
 
             $command->info('Tailwind CSS scaffolding installed successfully.');
 
             if ($command->option('auth')) {
-                LaravelPresetDark::installAuth();
+                Dark::installAuth();
 
                 $command->info('Tailwind CSS auth scaffolding installed successfully.');
             }

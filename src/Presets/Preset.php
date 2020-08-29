@@ -1,6 +1,6 @@
 <?php
 
-namespace TailwindComponents\LaravelPreset;
+namespace TailwindComponents\LaravelPreset\Presets;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -43,10 +43,11 @@ class Preset extends LaravelPreset
     public static function installAuth()
     {
         static::scaffoldController();
+        static::scaffoldMigrations();
         static::scaffoldAuth();
     }
 
-    protected static function updatePackageArray(array $packages)
+    protected static function updatePackageArray($packages)
     {
         return array_merge(
             static::NPM_PACKAGES_TO_ADD,
@@ -66,20 +67,20 @@ class Preset extends LaravelPreset
             }
         });
 
-        copy(__DIR__.'/../stubs/resources/css/app.css', resource_path('css/app.css'));
+        copy(__DIR__.'/../../stubs/resources/css/app.css', resource_path('css/app.css'));
     }
 
     protected static function updateBootstrapping()
     {
-        copy(__DIR__.'/../stubs/tailwind.config.js', base_path('tailwind.config.js'));
+        copy(__DIR__.'/../../stubs/tailwind.config.js', base_path('tailwind.config.js'));
 
-        copy(__DIR__.'/../stubs/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__.'/../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/../stubs/resources/js/app.js', resource_path('js/app.js'));
+        copy(__DIR__.'/../../stubs/resources/js/app.js', resource_path('js/app.js'));
 
-        copy(__DIR__.'/../stubs/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
+        copy(__DIR__.'/../../stubs/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
 
-        (new Filesystem)->copyDirectory(__DIR__.'/../stubs/resources/js/components', resource_path('js/components'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/resources/js/components', resource_path('js/components'));
     }
 
 
@@ -100,6 +101,19 @@ class Preset extends LaravelPreset
             });
     }
 
+    protected static function scaffoldMigrations()
+    {
+        $filesystem = new Filesystem;
+
+        collect($filesystem->allFiles(base_path('vendor/laravel/ui/stubs/migrations')))
+            ->each(function (SplFileInfo $file) use ($filesystem) {
+                $filesystem->copy(
+                    $file->getPathname(),
+                    database_path('migrations/'.$file->getFilename())
+                );
+            });
+    }
+
     protected static function scaffoldAuth()
     {
         file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
@@ -116,7 +130,7 @@ class Preset extends LaravelPreset
         return str_replace(
             '{{namespace}}',
             Container::getInstance()->getNamespace(),
-            file_get_contents(__DIR__.'/../stubs/controllers/HomeController.stub')
+            file_get_contents(__DIR__.'/../../stubs/controllers/HomeController.stub')
         );
     }
 }
