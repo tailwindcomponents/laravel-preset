@@ -15,7 +15,7 @@ class Preset extends LaravelPreset
         '@tailwindcss/typography' => '^0.2.0',
         '@tailwindcss/custom-forms' => '^0.2.0',
         'laravel-mix' => '^5.0.1',
-        'tailwindcss' => '^1.7.0',
+        'tailwindcss' => '^1.8.0',
         'autoprefixer' => '^9.8.6',
         'postcss-import' => '^12.0.1',
         'vue' => '^2.6.11',
