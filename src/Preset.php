@@ -1,6 +1,6 @@
 <?php
 
-namespace TailwindComponents\LaravelPreset\Presets;
+namespace TailwindComponents\LaravelPreset;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -38,6 +38,7 @@ class Preset extends LaravelPreset
         static::updateStyles();
         static::updateBootstrapping();
         static::removeNodeModules();
+        static::updatePagination();
     }
 
     public static function installAuth()
@@ -45,6 +46,7 @@ class Preset extends LaravelPreset
         static::scaffoldController();
         static::scaffoldMigrations();
         static::scaffoldAuth();
+        static::scaffoldAuthViews();
     }
 
     protected static function updatePackageArray($packages)
@@ -132,5 +134,17 @@ class Preset extends LaravelPreset
             Container::getInstance()->getNamespace(),
             file_get_contents(__DIR__.'/../../stubs/controllers/HomeController.stub')
         );
+    }
+
+    protected static function updatePagination()
+    {
+        (new Filesystem)->delete(resource_path('views/vendor/paginate'));
+
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/resources/views/vendor/pagination', resource_path('views/vendor/pagination'));
+    }
+
+    protected static function scaffoldAuthViews()
+    {
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/resources/views', resource_path('views'));
     }
 }

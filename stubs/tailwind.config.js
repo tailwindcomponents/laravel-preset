@@ -19,7 +19,6 @@ module.exports = {
   },
   variants: {},
   plugins: [
-    require("@tailwindcss/custom-forms"),
-    require('@tailwindcss/typography')
+    require("@tailwindcss/forms")
   ]
 }
