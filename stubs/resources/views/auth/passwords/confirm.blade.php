@@ -12,7 +12,7 @@
 
             <label class="block mt-3">
                 <span class="text-gray-700 text-sm">{{ __('Password') }}</span>
-                <input id="password" type="password" class="form-input mt-1 block w-full rounded-md" name="password" required autocomplete="current-password">
+                <input id="password" type="password" class="mt-1 block w-full rounded-md" name="password" required autocomplete="current-password">
             
                 @error('password')
                     <span class="text-sm text-red-500" role="alert">

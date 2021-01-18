@@ -12,7 +12,7 @@
 
             <label class="block">
                 <span class="text-gray-700 text-sm">{{ __('E-Mail Address') }}</span>
-                <input id="email" type="email" class="form-input mt-1 block w-full rounded-md" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+                <input id="email" type="email" class="mt-1 block w-full rounded-md" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
                 
                 @error('email')
                     <span class="text-sm text-red-500" role="alert">
@@ -23,7 +23,7 @@
 
             <label class="block mt-3">
                 <span class="text-gray-700 text-sm">{{ __('Password') }}</span>
-                <input id="password" type="password" class="form-input mt-1 block w-full rounded-md" name="password" required autocomplete="new-password">
+                <input id="password" type="password" class="mt-1 block w-full rounded-md" name="password" required autocomplete="new-password">
             
                 @error('password')
                     <span class="text-sm text-red-500" role="alert">
@@ -34,7 +34,7 @@
 
             <label class="block mt-3">
                 <span class="text-gray-700 text-sm">{{ __('Confirm Password') }}</span>
-                <input id="password-confirm" type="password" class="form-input mt-1 block w-full rounded-md" name="password_confirmation" required autocomplete="new-password">
+                <input id="password-confirm" type="password" class="mt-1 block w-full rounded-md" name="password_confirmation" required autocomplete="new-password">
             </label>
 
             <div class="mt-6">
