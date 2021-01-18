@@ -13,13 +13,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body class="bg-gray-100 font-nunito">
+<body class="bg-gray-100 font-roboto">
     <div id="app">
         <nav x-data="{ dropdownOpen: false }" class="bg-white shadow-sm">
             <div class="container flex justify-between items-center mx-auto px-6 py-4">

@@ -10,14 +10,17 @@ module.exports = {
     "resources/**/*.vue",
     "resources/**/*.twig"
   ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
-        "nunito": ["Nunito"],
+        "roboto": ["Roboto"],
       },
     }
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [
     require("@tailwindcss/forms")
   ]
