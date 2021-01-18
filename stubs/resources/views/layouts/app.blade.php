@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -17,29 +17,28 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body class="bg-gray-900 font-nunito">
+<body class="bg-gray-100 font-nunito">
     <div id="app">
-        <nav class="bg-gray-800 shadow-sm">
+        <nav x-data="{ dropdownOpen: false }" class="bg-white shadow-sm">
             <div class="container flex justify-between items-center mx-auto px-6 py-4">
                 <div>
-                    <a href="{{ url('/') }}" class="text-xl text-white">{{ config('app.name', 'Laravel') }}</a>
+                    <a href="{{ url('/') }}" class="text-xl text-gray-800">{{ config('app.name', 'Laravel') }}</a>
                 </div>
 
                 <div>
                     @guest
-                        <a href="{{ route('login') }}" class="text-gray-400 font-light mx-4 hover:underline">{{ __('Login') }}</a>
-                        <a href="{{ route('register') }}" class="text-gray-400 font-light hover:underline">{{ __('Register') }}</a>
+                        <a href="{{ route('login') }}" class="text-gray-700 font-light mx-4 hover:underline">{{ __('Login') }}</a>
+                        <a href="{{ route('register') }}" class="text-gray-700 font-light hover:underline">{{ __('Register') }}</a>
                     @else
                         <div  class="relative">
-                            <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block text-gray-400 font-light focus:outline-none">
+                            <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block text-gray-700 font-light focus:outline-none">
                                 {{ Auth::user()->name }}
                             </button>
 
-                            <div v-if="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
-
-                            <div v-if="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-gray-800 rounded-md shadow-xl z-20">
-                                <a href="{{ route('logout') }}"  class="block px-4 py-2 text-sm text-gray-400 hover:bg-blue-500 hover:text-white" 
+                            <div @click.away="dropdownOpen = false" x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+                                <a href="{{ route('logout') }}"  class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white" 
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
