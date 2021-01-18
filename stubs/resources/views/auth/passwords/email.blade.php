@@ -24,7 +24,7 @@
 
             <label class="block">
                 <span class="text-gray-700 text-sm">{{ __('E-Mail Address') }}</span>
-                <input id="email" type="email" class="mt-1 block w-full rounded-md" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input id="email" type="email" class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
             </label>
 
             <div class="mt-6">
